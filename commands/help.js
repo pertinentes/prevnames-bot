@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, PermissionsBitField } = require('discord.js');
+uconst { SlashCommandBuilder, PermissionsBitField } = require('discord.js');
 const { EmbedBuilder } = require('discord.js');
 
 const messageCommands = [
@@ -26,9 +26,7 @@ module.exports = {
         try {
             await message.channel.send({ embeds: [embed] });
         } catch (error) {
-            console.error('Erreur lors de l\'envoi de l\'aide en message:', error);
-            const msg = await message.reply('Erreur lors de l\'envoi de l\'aide.');
-            msg.delete();
+            console.error(error);
         }
     },
 
@@ -38,8 +36,7 @@ module.exports = {
         try {
             await interaction.reply({ embeds: [embed] });
         } catch (error) {
-            console.error('Erreur lors de l\'envoi de l\'aide en slash:', error);
-            interaction.reply({ content: 'Erreur lors de l\'envoi de l\'aide.', ephemeral: true });
+            console.error(error);
         }
     },
 
