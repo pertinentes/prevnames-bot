@@ -26,7 +26,7 @@ module.exports = {
     const userId = interaction.user.id;
 
     try {
-      const response = await axios.get('http://154.51.39.67:20005/clearprevnames/' + userId);
+      const response = await axios.get('http://localhost:20005/clearprevnames/' + userId);
 
       interaction.reply({ content: `Tous vos anciens pseudos ont bien été supprimés.`, ephemeral: true });
     } catch (error) {
